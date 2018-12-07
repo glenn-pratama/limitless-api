@@ -1,8 +1,11 @@
 {
   "dependencies": {
+    "config": "^3.0.0",
     "express": "^4.16.4",
     "expressjs": "^1.0.1",
-    "nodemon": "^1.18.7"
+    "knex": "^0.15.2",
+    "objection": "^1.4.0",
+    "pg": "^7.7.1"
   },
   "name": "limitless-api",
   "version": "1.0.0",
@@ -18,9 +21,11 @@
     "url": "https://github.com/glenn-pratama/limitless-api/issues"
   },
   "homepage": "https://github.com/glenn-pratama/limitless-api#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  },
   "scripts": {
-    "dev": "nodemon -e js,html src/app.js --ignore test/",
+    "dev": "set NODE_ENV=development&& nodemon -e js,html src/app.js --ignore test/",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
