@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.16.4",
+    "expressjs": "^1.0.1",
+    "nodemon": "^1.18.7"
+  },
+  "name": "limitless-api",
+  "version": "1.0.0",
+  "description": "Backend API for limitless gui",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glenn-pratama/limitless-api.git"
+  },
+  "author": " <glenn.pratama@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/glenn-pratama/limitless-api/issues"
+  },
+  "homepage": "https://github.com/glenn-pratama/limitless-api#readme",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon -e js,html src/app.js --ignore test/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
