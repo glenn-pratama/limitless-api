@@ -1,8 +1,9 @@
 const express = require('express');
+const config = require('config');
 
 const router = require('./router');
 const app = express();
-const port = 4000;
+const port = config.get('General.port');
 
 app.use('/', router);
 app.listen(port, () => {

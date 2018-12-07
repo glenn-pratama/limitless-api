@@ -1,5 +1,6 @@
 {
   "General" : {
+    "port": 4000,
     "dbConfig" : {
       "client": "postgresql",
       "connection": {

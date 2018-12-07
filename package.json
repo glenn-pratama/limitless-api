@@ -25,7 +25,7 @@
     "nodemon": "^1.18.7"
   },
   "scripts": {
-    "dev": "set NODE_ENV=development&& nodemon -e js,html src/app.js --ignore test/",
+    "dev": "set NODE_ENV=development&& nodemon -e js,html,json src/app.js --ignore test/",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
