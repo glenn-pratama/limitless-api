@@ -3,6 +3,11 @@ const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const config = require('config');
 
+const { Model } = require('objection');
+const db = require('./libraries/db');
+
+Model.knex(db);
+
 const router = require('./router');
 
 const app = express();

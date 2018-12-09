@@ -35,8 +35,22 @@
     "eslint-plugin-import": "^2.14.0",
     "nodemon": "^1.18.7"
   },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "stage-2"
+    ],
+    "plugins": []
+  },
   "scripts": {
-    "dev": "set NODE_ENV=development&& nodemon --ignore test/ --exec babel-node --presets env,stage-2 -e js,html,json src/app.js",
+    "dev": "set NODE_ENV=development&& nodemon --ignore test/ --exec babel-node -e js,html,json src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

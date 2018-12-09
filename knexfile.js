@@ -1,4 +1,5 @@
 const config = require('config');
+
 const dbConfig = config.get('General.dbConfig');
 
 module.exports = {
