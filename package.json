@@ -5,7 +5,8 @@
     "expressjs": "^1.0.1",
     "knex": "^0.15.2",
     "objection": "^1.4.0",
-    "pg": "^7.7.1"
+    "pg": "^7.7.1",
+    "validator": "^10.9.0"
   },
   "name": "limitless-api",
   "version": "1.0.0",
@@ -23,6 +24,8 @@
   "homepage": "https://github.com/glenn-pratama/limitless-api#readme",
   "devDependencies": {
     "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "nodemon": "^1.18.7"
   },
   "scripts": {
