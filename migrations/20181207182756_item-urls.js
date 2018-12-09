@@ -1,5 +1,5 @@
 exports.up = async (knex) => {
-  return knex.schema.createTable('item_urls', t => {
+  return knex.schema.createTable('item_urls', (t) => {
     t.increments();
     t.uuid('item_id').references('id').inTable('items');
     t.string('source_type').notNullable();
@@ -11,4 +11,4 @@ exports.up = async (knex) => {
   });
 };
 
-exports.down = async (knex) => knex.schema.dropTableIfExists('item_urls');
+exports.down = async knex => knex.schema.dropTableIfExists('item_urls');
