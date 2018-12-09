@@ -3,7 +3,7 @@ exports.up = async (knex) => {
     t.increments();
     t.uuid('item_id').references('id').inTable('items');
     t.string('source_type').notNullable();
-    t.string('name').notNullable();
+    t.text('url').notNullable();
     t.text('description');
     t.integer('monitor_frequency').notNullable().defaultTo(1);
     t.boolean('is_active').notNullable().defaultTo(true);
