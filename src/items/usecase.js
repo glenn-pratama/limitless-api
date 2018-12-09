@@ -1,6 +1,8 @@
 const validator = require('../libraries/validator_wrapper')();
 const validatorSummarize = require('../libraries/validator_summarizer');
 
+const itemDao = require('./dao')();
+
 const createUseCaseLayer = () => {
   class ItemUseCase {
     postItem = async (item) => {
@@ -21,6 +23,9 @@ const createUseCaseLayer = () => {
         result.message = 'Validation failed';
         result.details = errorMessages;
       }
+
+      const itemInserted = await itemDao.insertItem(item);
+      result.data = itemInserted;
 
       return result;
     }
