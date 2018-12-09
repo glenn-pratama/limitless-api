@@ -1,4 +1,6 @@
 const express = require('express');
+const helmet = require('helmet');
+const bodyParser = require('body-parser');
 const config = require('config');
 
 const router = require('./router');
@@ -6,6 +8,8 @@ const router = require('./router');
 const app = express();
 const port = config.get('General.port');
 
+app.use(helmet());
+app.use(bodyParser.json());
 app.use('/', router);
 app.listen(port, () => {
   // eslint-disable-next-line no-console
