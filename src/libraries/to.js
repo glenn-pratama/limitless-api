@@ -1,5 +1,3 @@
-export default function to(promise) {
-  return promise.then(data => {
-    return [null, data];
-  }).catch(err => [err]);
-}
+module.exports = promise => promise
+  .then(data => ({ error: null, result: data }))
+  .catch(error => ({ error }));
