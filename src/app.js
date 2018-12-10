@@ -2,6 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const config = require('config');
+const cors = require('cors');
 
 const { Model } = require('objection');
 const db = require('./libraries/db');
@@ -14,6 +15,7 @@ const app = express();
 const port = config.get('General.port');
 
 app.use(helmet());
+app.use(cors());
 app.use(bodyParser.json());
 app.use('/', router);
 app.listen(port, () => {
