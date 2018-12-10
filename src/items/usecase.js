@@ -20,6 +20,8 @@ const createUseCaseLayer = (itemDao) => {
         result.status = 'NOK';
         result.message = 'Validation failed';
         result.details = errorMessages;
+
+        return result;
       }
 
       const itemInserted = await itemDao.insertItem(item);
