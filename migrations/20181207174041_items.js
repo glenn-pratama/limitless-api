@@ -7,6 +7,7 @@ exports.up = async (knex) => {
     t.text('description');
     t.boolean('is_active').notNullable().defaultTo(true);
     t.timestamps(false, true);
+    t.unique('name');
   });
 };
 
