@@ -1,9 +1,7 @@
 const validator = require('../libraries/validator_wrapper')();
 const validatorSummarize = require('../libraries/validator_summarizer');
 
-const itemDao = require('./dao')();
-
-const createUseCaseLayer = () => {
+const createUseCaseLayer = (itemDao) => {
   class ItemUseCase {
     postItem = async (item) => {
       const result = { status: 'OK' };
@@ -26,6 +24,16 @@ const createUseCaseLayer = () => {
 
       const itemInserted = await itemDao.insertItem(item);
       result.data = itemInserted;
+
+      return result;
+    }
+
+    listItems = async (perPage, currentPage) => {
+      const result = { status: 'OK' };
+      const { total, rows } = await itemDao.getItems(perPage, currentPage);
+
+      result.total = total;
+      result.data = rows;
 
       return result;
     }

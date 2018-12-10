@@ -33,6 +33,16 @@ const createItemDao = () => {
         return Promise.reject(err);
       }
     }
+
+    getItems = async (perPage, currentPage) => {
+      const totalQuery = await ItemModel.query().count('id as cnt');
+      const total = totalQuery[0].cnt;
+
+      const offSet = (currentPage - 1) * perPage;
+      const rows = await ItemModel.query().offset(offSet).limit(perPage);
+
+      return { total, rows };
+    }
   }
 
   return new ItemDao();
